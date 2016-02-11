@@ -128,11 +128,18 @@ class ViewController: UIViewController {
                 decide++
                 currentLabel.center = currentPoints
             }
+            if item == "" {
+                item.text = String(currentLetter)
+                decide++
+                currentLabel.center = currentPoints
+            }// else if item  {
+                
+            //}
             if decide == 2 {
                 reset()
             }
             checkForWinner()
-            getCurrentLetter()  
+            getCurrentLetter()
         }
     }
     
