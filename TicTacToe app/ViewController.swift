@@ -115,6 +115,8 @@ class ViewController: UIViewController {
         label7.text = ""
         label8.text = ""
         label9.text = ""
+        
+        
     }
     @IBAction func dragObject(sender: UIPanGestureRecognizer) {
         let points = sender.locationInView(view)
@@ -122,9 +124,15 @@ class ViewController: UIViewController {
         currentLabel.center = CGPointMake(points.x, points.y)
         for item in labelArray {
             if CGRectContainsPoint(item.frame, points) {
-                item.text = String(currentLabel)
+                item.text = String(currentLetter)
+                decide++
                 currentLabel.center = currentPoints
             }
+            if decide == 2 {
+                reset()
+            }
+            checkForWinner()
+            getCurrentLetter()  
         }
     }
     
